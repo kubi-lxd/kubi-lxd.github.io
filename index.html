@@ -173,49 +173,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="在Github上搭建免费个人博客-并支持百度-谷歌等内外搜索引擎访问"><a href="#在Github上搭建免费个人博客-并支持百度-谷歌等内外搜索引擎访问" class="headerlink" title="在Github上搭建免费个人博客,并支持百度,谷歌等内外搜索引擎访问"></a>在Github上搭建免费个人博客,并支持百度,谷歌等内外搜索引擎访问</h1><p>一直想搞一个个人技术博客,一方面记录自己在学习技术路上的点滴,另一方面也便于分享自身所见所学.得知可以在Github直接搭建个人博客,免费而且搭建也比较方便,做了一定尝试成功搭建了博客.</p>
-<p>参考网址:</p>
-<p><a href="http://blog.haoji.me/build-blog-website-by-hexo-github.html?from=xa" target="_blank" rel="noopener">Hexo搭建博客</a></p>
-<h2 id="Github准备"><a href="#Github准备" class="headerlink" title="Github准备"></a>Github准备</h2><ol>
-<li>创建博客仓库</li>
-</ol>
-<ul>
-<li>首先需要注册Github账号,假定用户名为user</li>
-<li>在Github上创建一个名为user.github.io的仓库,前面的user即注册Github账号时的用户名</li>
-<li>这样自己的博客网站访问地址为 <a href="http://test.github.io" target="_blank" rel="noopener">http://test.github.io</a></li>
-</ul>
-<ol start="2">
-<li>本地配置git终端环境</li>
-</ol>
-<ul>
-<li><p>在本机内安装Git</p>
-</li>
-<li><p>本地Git环境内,配置用户信息,在git终端中输入:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"username"</span> <span class="comment"># username处填写Github账号的用户名</span></span><br><span class="line">$ git config --global user.email <span class="string">"xxxx@xx.com"</span> <span class="comment"># xxxx@xx.com处填写Github账号的邮箱</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>本地Git环境内完成SSH-KEY的密钥配置(即赋予本机git终端环境控制github账号的权限)</p>
-</li>
-<li><p>终端内输入:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.ssh <span class="comment"># 查看本机是否存在密钥ssh keys(如不存在输入下面一行)</span></span><br><span class="line">$ ssh-keygen -t rsa -C <span class="string">"xxxx@xx.com"</span> <span class="comment"># 生成ssh密钥,后面的邮箱地址是注册github账号的地址(github账号邮箱需要提前验证好)</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>之后终端会要求输入两次密码,默认为空就好(也可以设置)</p>
-</li>
-<li><p>然后会在~/.ssh/路径下(windows应该为C:\User.ssh)路径下生成文件rd_rsa和id_rsa.pub</p>
-</li>
-<li><p>打开idb_rsa.pub复制里面的内容</p>
-</li>
-<li><p>然后打开Github网主页,登录后进入个人设置,选择 SSH and GPG keys, 然后选择 New SSH key 添加一个新的密钥.</p>
-</li>
-<li><p>Title按照自身喜好用途命名,Key的内容粘贴idb_rsa.pub复制的内容,然后保存.</p>
-</li>
-<li><p>此时完成配置,可以通过终端操作Github账号里的内容,为撰写修改博客做好准备.</p>
-</li>
-</ul>
-<p>以上部分也是Github常规开发前的操作,Github操作相关可以看<a href="http://blog.haoji.me/build-blog-website-by-hexo-github.html?from=xa" target="_blank" rel="noopener">Git操作参考地址</a></p>
-<h2 id="Hexo准备"><a href="#Hexo准备" class="headerlink" title="Hexo准备"></a>Hexo准备</h2><p>Hexo是一个博客发布工具,支持Markdown格式,支持我们快速的在Github上搭建博客,同时可以选择各种的主题.</p>
-<p>Markdown格式编辑文章也比较方便,和Github兼容也很好,初学可以看这篇<a href="http://blog.haoji.me/build-blog-website-by-hexo-github.html?from=xa" target="_blank" rel="noopener">MarkDown教程</a></p>
-<p>这样的话,,,.待施工  </p>
-
+        <p>一直想搞一个个人技术博客,一方面记录自己在学习技术路上的点滴,另一方面也便于分享自身所见所学.得知可以在Github直接搭建个人博客,免费而且搭建也比较方便,做了一定尝试成功搭建了博客.博客使用Hexo框架搭建,可以使用markdown格式编辑文章,国内搜索引擎的访问支持则使用了CODING作为国内访问仓库,保证内外访问.</p>
+        
+          <a class="article-more-a" href="/2020/02/13/%E5%9C%A8github%E4%B8%8A%E6%90%AD%E5%BB%BA%E5%85%8D%E8%B4%B9%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-%E5%B9%B6%E6%94%AF%E6%8C%81%E7%99%BE%E5%BA%A6-%E8%B0%B7%E6%AD%8C%E7%AD%89%E5%86%85%E5%A4%96%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E8%AE%BF%E9%97%AE/#more">more >></a>
+        
       
 
       
